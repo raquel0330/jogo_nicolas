@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Você Me Conhece? - Nicolas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- TELA INICIAL -->
+
+        <section id="telaInicial" class="tela">
+
+            <div class="decoracao">🎮 ⭐ 🎉</div>
+
+            <h1>VOCÊ ME CONHECE?</h1>
+
+            <h2>Desafio do Nicolas! 🔴</h2>
+
+            <img src="imagens/criancas.png" alt="Crianças brincando">
+
+            <p>
+                Será que você conhece o Nicolas de verdade?
+                Responda às perguntas, encontre o jabuti
+                e divirta-se!
+            </p>
+
+            <label for="nomeJogador">
+                Qual é o seu nome?
+            </label>
+
+            <input
+                type="text"
+                id="nomeJogador"
+                placeholder="Digite seu nome"
+            >
+
+            <button onclick="iniciarJogo()">
+                COMEÇAR! 🚀
+            </button>
+
+        </section>
+
+
+        <!-- PERGUNTAS -->
+
+        <section id="telaJogo" class="tela escondida">
+
+            <div class="topo">
+
+                <span id="numeroPergunta">
+                    Pergunta 1/12
+                </span>
+
+                <span id="pontuacao">
+                    ⭐ 0 pontos
+                </span>
+
+            </div>
+
+            <div class="barra-container">
+
+                <div id="barraProgresso"></div>
+
+            </div>
+
+            <h2 id="pergunta"></h2>
+
+            <div id="alternativas" class="alternativas"></div>
+
+            <div id="mensagem"></div>
+
+            <button
+                id="botaoProximo"
+                class="escondida"
+                onclick="proximaPergunta()">
+
+                PRÓXIMA PERGUNTA ➜
+
+            </button>
+
+        </section>
+
+
+        <!-- RESULTADO DAS PERGUNTAS -->
+
+        <section id="telaResultado" class="tela escondida">
+
+            <div class="emoji-grande">🏆</div>
+
+            <h1>PARABÉNS!</h1>
+
+            <h2 id="nomeResultado"></h2>
+
+            <div class="cartao-pontos">
+
+                <p>Sua pontuação:</p>
+
+                <strong id="pontosQuiz">0</strong>
+
+                <p>de 120 pontos</p>
+
+            </div>
+
+            <p id="mensagemQuiz"></p>
+
+            <button onclick="iniciarJabuti()">
+                PRÓXIMO DESAFIO 🐢
+            </button>
+
+        </section>
+
+
+        <!-- JOGO DO JABUTI -->
+
+        <section id="telaJabuti" class="tela escondida">
+
+            <div class="emoji-grande">🐢</div>
+
+            <h1>ONDE ESTÁ O JABUTI?</h1>
+
+            <p>
+                O jabuti está escondido em uma das três casinhas.
+                Será que você consegue encontrá-lo?
+            </p>
+
+            <h2 id="rodadaJabuti">
+                Rodada 1 de 3
+            </h2>
+
+            <div class="casinhas">
+
+                <button class="casinha" data-casa="0">
+                    🏠
+                </button>
+
+                <button class="casinha" data-casa="1">
+                    🏠
+                </button>
+
+                <button class="casinha" data-casa="2">
+                    🏠
+                </button>
+
+            </div>
+
+            <div id="mensagemJabuti"></div>
+
+            <p id="pontosJabuti">
+                ⭐ 0 pontos
+            </p>
+
+            <button
+                id="proximaRodada"
+                class="escondida"
+                onclick="proximaRodadaJabuti()">
+
+                CONTINUAR ➜
+
+            </button>
+
+        </section>
+
+
+        <!-- JOGO DA MEMÓRIA -->
+
+        <section id="telaMemoria" class="tela escondida">
+
+            <div class="emoji-grande">🧠</div>
+
+            <h1>JOGO DA MEMÓRIA</h1>
+
+            <p>
+                Encontre os pares de figuras iguais!
+            </p>
+
+            <p id="pontosMemoria">
+                ⭐ Pares encontrados: 0/6
+            </p>
+
+            <div id="tabuleiro" class="tabuleiro">
+
+            </div>
+
+            <div id="mensagemMemoria"></div>
+
+            <button
+                id="finalizarMemoria"
+                class="escondida"
+                onclick="mostrarFinal()">
+
+                VER RESULTADO FINAL 🏆
+
+            </button>
+
+        </section>
+
+
+        <!-- RESULTADO FINAL -->
+
+        <section id="telaFinal" class="tela escondida">
+
+            <div class="emoji-grande">🏆🎉🥳</div>
+
+            <h1>VOCÊ CONSEGUIU!</h1>
+
+            <h2 id="nomeFinal"></h2>
+
+            <div class="cartao-pontos">
+
+                <p>Pontuação do desafio:</p>
+
+                <strong id="pontosFinais">0</strong>
+
+                <p>pontos</p>
+
+            </div>
+
+            <h2 id="mensagemFinal"></h2>
+
+            <p id="detalhesFinal"></p>
+
+            <button onclick="reiniciarJogo()">
+                JOGAR NOVAMENTE 🔄
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

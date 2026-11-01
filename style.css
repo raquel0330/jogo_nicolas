@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ff4444,
+        #ffb52e,
+        #4d91ff
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+.container {
+
+    background: white;
+
+    width: 100%;
+    max-width: 680px;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+.tela {
+    width: 100%;
+}
+
+.escondida {
+    display: none !important;
+}
+
+.decoracao {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.emoji-grande {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #e52b2b;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 180px;
+    max-width: 100%;
+    display: block;
+    margin: 15px auto;
+    border-radius: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ff7777;
+    border-radius: 12px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+button {
+
+    background: #e52b2b;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 16px 20px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+button:hover {
+    transform: scale(1.04);
+    filter: brightness(0.9);
+}
+
+#telaInicial button,
+#telaResultado button,
+#telaFinal button {
+    width: 100%;
+}
+
+/* PERGUNTAS */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #d62828;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.barra-container {
+
+    background: #eeeeee;
+
+    width: 100%;
+
+    height: 13px;
+
+    border-radius: 20px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+
+}
+
+#barraProgresso {
+
+    background: #ffb52e;
+
+    height: 100%;
+
+    width: 0%;
+
+    transition: 0.4s;
+
+}
+
+#pergunta {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.alternativas {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+}
+
+.alternativa {
+
+    background: #fff0f0;
+
+    color: #a71919;
+
+    border: 2px solid #ffb5b5;
+
+    padding: 20px 10px;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+
+}
+
+.alternativa:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.correta {
+    background: #b8f5c5 !important;
+    border-color: #28a745 !important;
+    color: #145c28 !important;
+}
+
+.errada {
+    background: #ffc4c4 !important;
+    border-color: #dc3545 !important;
+    color: #8b1515 !important;
+}
+
+#mensagem {
+    margin: 20px 0;
+    font-size: 19px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+#botaoProximo {
+    width: 100%;
+}
+
+/* CARTÕES DE PONTUAÇÃO */
+
+.cartao-pontos {
+
+    background: #fff0bd;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    margin: 25px 0;
+
+}
+
+.cartao-pontos strong {
+
+    display: block;
+
+    color: #e52b2b;
+
+    font-size: 65px;
+
+}
+
+/* JOGO DO JABUTI */
+
+.casinhas {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 30px 0;
+
+}
+
+.casinha {
+
+    background: #ffe0a3;
+
+    color: #663300;
+
+    font-size: 55px;
+
+    padding: 25px 5px;
+
+    border: 3px solid #e5a33c;
+
+    border-radius: 20px;
+
+}
+
+.casinha:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+#mensagemJabuti {
+
+    min-height: 55px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+
+}
+
+#pontosJabuti {
+    font-weight: bold;
+    color: #b32626;
+}
+
+/* JOGO DA MEMÓRIA */
+
+.tabuleiro {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin: 25px 0;
+
+}
+
+.carta {
+
+    background: #ffdfdf;
+
+    border: 3px solid #e52b2b;
+
+    border-radius: 15px;
+
+    height: 95px;
+
+    font-size: 38px;
+
+    padding: 5px;
+
+}
+
+.carta.revelada,
+.carta.encontrada {
+
+    background: #d7f8dd;
+
+    border-color: #28a745;
+
+}
+
+.carta:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+#mensagemMemoria {
+
+    min-height: 35px;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    margin: 15px 0;
+
+}
+
+#finalizarMemoria {
+    width: 100%;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .alternativas {
+        grid-template-columns: 1fr;
+    }
+
+    .casinhas {
+        gap: 7px;
+    }
+
+    .casinha {
+        font-size: 40px;
+        padding: 20px 5px;
+    }
+
+    .topo {
+        font-size: 13px;
+    }
+
+    .carta {
+        height: 75px;
+        font-size: 30px;
+    }
+
+}
